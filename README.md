@@ -1,6 +1,4 @@
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/022a045e-39cc-4769-b254-b3c4c982ad72" />
-<img width="932" height="662" alt="image" src="https://github.com/user-attachments/assets/bfe7790b-52db-4c20-9c53-4bc7da4c50f6" />
-
+<img width="932" height="662" alt="image" src="https://github.com/user-attachments/assets/022a045e-39cc-4769-b254-b3c4c982ad72" />
 
 ## 1. 서비스 개요
 
@@ -93,7 +91,7 @@
 ## 5. UI/UX 컨셉
 
 ### 📌 핵심 컨셉
-<img width="931" height="661" alt="image" src="https://github.com/user-attachments/assets/022a045e-39cc-4769-b254-b3c4c982ad72" />
+<img width="932" height="662" alt="image" src="https://github.com/user-attachments/assets/bfe7790b-52db-4c20-9c53-4bc7da4c50f6" />
 
 👉 **“오늘의 DJ가 되어 감정을 음악으로 표현하는 서비스”**
 
