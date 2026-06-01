@@ -1,0 +1,135 @@
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #274592; /* 메인 배경색 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.polaroidCard {
+  position: relative;
+  width: 550px;
+  height: 800px;
+  background-color: #ffdfc8; /* 폴라로이드 프레임 색상 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Irish Grover", cursive;
+  font-size: 64px;
+  margin-bottom: 60px;
+  color: #000;
+}
+
+.dot {
+  color: #274592;
+}
+
+.inputArea {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center; /* 라벨과 입력창의 세로 중앙 정렬 */
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* 라벨 스타일: 왼쪽 고정 너비 부여 */
+.label {
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  width: 100px; /* 라벨 너비를 고정하여 입력창 시작 위치를 맞춤 */
+  flex-shrink: 0; /* 라벨이 찌그러지지 않게 설정 */
+  margin-bottom: 0; /* 한 줄일 때는 밑 마진 제거 */
+}
+
+/* 입력창 스타일: 나머지 공간을 꽉 채움 */
+.blackInput {
+  flex: 1; /* 라벨을 제외한 남은 가로 공간을 모두 차지 */
+  height: 50px;
+  background-color: #000;
+  border: none;
+  padding: 0 15px;
+  color: #fff;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+
+.loginButton {
+  width: 100%;
+  height: 55px;
+  background-color: #626161; /* 검색창 사이드 배경색과 통일 */
+  color: #fff;
+  border: none;
+  font-family: "Irish Grover", cursive;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.loginButton:hover {
+  transform: scale(1.02);
+}
+
+.divider {
+  margin: 25px 0;
+  font-family: "Irish Grover", cursive;
+  font-size: 20px;
+  color: #000;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #000;
+}
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+}
+
+.signupButton {
+  background: none;
+  border: none;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #000;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.brandLogo {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: "Irish Grover", cursive;
+  font-size: 36px;
+  color: #000;
+}

@@ -1,0 +1,242 @@
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #274592; /* 피그마의 딥블루 백그라운드 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.homeBtn {
+  position: absolute;
+  left: 20px; /* 왼쪽 상단 여백 */
+  top: 20px;
+  width: 40px; /* 아이콘 크기는 디자인 보시고 조절하세요 */
+  height: 40px;
+  z-index: 10; /* 모든 요소보다 위에 오도록 설정 */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.homeBtn:hover {
+  transform: scale(1.1); /* 살짝 커지는 효과 */
+}
+
+.homeBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.polaroidCard {
+  position: relative;
+  width: 550px;
+  height: 800px;
+  background-color: #ffdfc8; /* 폴라로이드 살구빛 감성 프레임 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Irish Grover", cursive;
+  font-size: 56px;
+  margin-bottom: 5px;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.dot {
+  color: #274592;
+}
+
+.description {
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+/* 회색 리스트 판넬 컨테이너 */
+.tableContainer {
+  width: 100%;
+  background-color: #c4c4c4; /* 피그마 내부 그레이 박스 색상 */
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 테이블 공통 컬럼 비율 배정 */
+.tableHeader,
+.tableRow {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid #666;
+}
+
+.checkCol {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+}
+.idCol {
+  width: 23%;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nicknameCol {
+  width: 25%;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.messageCol {
+  width: 40%;
+  font-size: 13px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 테이블 헤더 커스텀 */
+.tableHeader {
+  height: 40px;
+  background-color: #b5b5b5;
+  border-bottom: 2px solid #000;
+  font-family: "Irish Grover", cursive;
+  font-size: 14px;
+  color: #000;
+}
+
+/* 테이블 바디 영역 (⭐ 7건 이상 시 스크롤 조건 핵심) */
+.tableBody {
+  max-height: 322px; /* 행당 약 46px * 7줄 공간 제한 */
+  overflow-y: auto; /* 데이터가 이 높이를 초과하면 자동으로 스크롤 생성 */
+  background-color: #c4c4c4;
+}
+
+/* 스크롤바 디자인 커스텀 (피그마처럼 깔끔하게 처리) */
+.tableBody::-webkit-scrollbar {
+  width: 14px;
+}
+.tableBody::-webkit-scrollbar-track {
+  background: #b5b5b5;
+  border-left: 1px solid #000;
+}
+.tableBody::-webkit-scrollbar-thumb {
+  background: #7a7a7a;
+  border: 2px solid #b5b5b5;
+}
+
+.tableRow {
+  height: 46px;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  color: #000;
+  transition: background-color 0.15s;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+/* 체크 선택되었을 때 행 배경 반전 효과 효과 */
+.selectedRow {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.emptyRow {
+  padding: 40px 0;
+  text-align: center;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  color: #555;
+  font-size: 14px;
+}
+
+/* 체크박스 기본 크기 확대 조정 */
+.checkCol input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #274592;
+}
+
+/* 하단 버튼 배치 그룹 */
+.buttonGroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 25px;
+}
+
+.acceptButton,
+.rejectButton {
+  flex: 1;
+  height: 55px;
+  border: none;
+  font-family: "Irish Grover", cursive;
+  font-size: 32px;
+  color: #000;
+  background-color: #929292; /* 피그마 버튼 회색 톤 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    background-color 0.2s;
+}
+
+.acceptButton:hover,
+.rejectButton:hover {
+  transform: translateY(-2px);
+  background-color: #7d7d7d;
+}
+
+.acceptButton:disabled,
+.rejectButton:disabled {
+  background-color: #b5b5b5;
+  color: #777;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 피드백 메시지 스타일 */
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "PretendardGOV-Regular", sans-serif;
+}
+
+.successMessage {
+  color: #274592;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "PretendardGOV-Regular", sans-serif;
+}
+
+.brandLogo {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: "Irish Grover", cursive;
+  font-size: 36px;
+  color: #000;
+}

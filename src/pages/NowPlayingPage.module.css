@@ -1,0 +1,256 @@
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #274592;
+  display: flex;
+  justify-content: center; /* 기본적으로 자식 요소를 중앙 정렬 */
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* 화면 밖으로 나간 검색창을 숨김 */
+}
+
+/* 폴라로이드와 검색창을 감싸는 컨테이너 */
+.mainWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 649px; /* 폴라로이드 너비에 맞춤 */
+}
+
+/* 검색 중일 때 전체 래퍼를 왼쪽으로 이동 */
+.mainWrapper.shifted {
+  transform: translateX(
+    -320px
+  ); /* 오른쪽 창이 나올 공간 확보를 위해 왼쪽으로 밀기 */
+}
+
+/* 폴라로이드 프레임 */
+.polaroidFrame {
+  position: relative;
+  width: 649px;
+  height: 905px;
+  background-color: #ffdfc8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  z-index: 2; /* 검색창보다 위에 있도록 설정 */
+}
+
+/* 오른쪽 검색 패널 - 처음에 숨겨져 있음 */
+.searchPanel {
+  position: absolute;
+  left: 680px; /* 폴라로이드 너비(649)보다 큰 값을 주어 오른쪽 밖으로 보냄 */
+  width: 600px;
+  height: 905px;
+  background-color: #626161;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease; /* 부드럽게 나타나는 효과 */
+  opacity: 0;
+  pointer-events: none; /* 숨겨져 있을 때 클릭 방지 */
+}
+
+/* 검색 중일 때 검색창 보이게 설정 */
+.shifted .searchPanel {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 이하 내부 스타일 (이전과 동일) */
+.innerContent {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 597px;
+  height: 700px;
+  background-image: url("/images/background.png");
+  background-size: cover; /* 영역을 가득 채우되 */
+  background-position: center; /* 이미지를 상하좌우 가운데로 정렬 */
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.avatarLayer {
+  position: absolute;
+  left: 25px;
+  top: 370px;
+  width: 516px;
+  height: 270px;
+}
+.avatarLayer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.turnTableLayer {
+  position: absolute;
+  left: 127px;
+  top: 530px;
+  width: 349px;
+  height: 193px;
+  cursor: pointer;
+}
+.turnTableLayer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.brandLogo {
+  position: absolute;
+  left: 450px;
+  top: 760px;
+  font-family: "Irish Grover", cursive;
+  font-size: 48px;
+  color: #000;
+}
+.selectedTrackInfo {
+  position: absolute;
+  width: 500px;
+  left: 115px;
+  top: 800px;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 15px;
+  text-align: right;
+  white-space: nowrap; /* 줄바꿈 방지 */
+  overflow: hidden; /* 영역을 벗어나는 글자 숨김 */
+  text-overflow: ellipsis; /* 벗어나는 부분은 ...으로 표시 */
+}
+
+.searchHeader {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.searchForm {
+  display: flex;
+  flex: 1;
+  background-color: #000;
+  align-items: center;
+  padding: 5px 15px;
+  height: 45px;
+}
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 20px;
+  outline: none;
+}
+.searchConfirmBtn,
+.searchCloseBtn {
+  background: none;
+  border: none;
+  color: #000;
+  font-family: "Irish Grover", cursive;
+  font-size: 32px;
+  cursor: pointer;
+}
+.searchResultArea {
+  margin-top: 20px;
+  flex: 1;
+  background-color: #979797;
+  padding: 20px;
+  overflow-y: auto;
+}
+.resultItem {
+  padding: 15px;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 18px;
+  border-bottom: 1px solid #271e1e;
+  cursor: pointer;
+}
+
+.resultItem {
+  display: flex; /* 가로 배열로 변경 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 15px; /* 이미지와 글자 사이 간격 */
+  padding: 10px 15px;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 16px;
+  border-bottom: 1px solid #626161;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* 썸네일 크기 및 모양 잡아주기 */
+.resultThumbnail {
+  width: 80px;
+  height: 45px;
+  object-fit: cover; /* 이미지가 찌그러지지 않게 */
+  border-radius: 4px; /* 모서리 살짝 둥글게 */
+  flex-shrink: 0; /* 글자가 길어져도 이미지가 작아지지 않게 */
+}
+
+/* 텍스트 영역 */
+.resultText {
+  flex: 1;
+  color: #000; /* 배경이 어두우니 글자는 밝게 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* 너무 길면 두 줄까지만 */
+  -webkit-box-orient: vertical;
+}
+
+/* 말풍선 컨테이너 */
+.thoughtBalloon {
+  position: absolute;
+  left: 353px;
+  top: 180px;
+  width: 220px;
+  height: 220px;
+  z-index: 5; /* 아바타보다 위에 오도록 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 말풍선 배경 이미지 */
+.balloonImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 말풍선 안의 썸네일 */
+.thumbnailInsideBalloon {
+  position: relative;
+  width: 100px; /* 말풍선 크기에 맞춰 임의 조정 */
+  height: 100px;
+  top: -20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+
+.thumbnailInsideBalloon img {
+  width: 150%; /* 썸네일 비율에 맞게 꽉 채우기 위해 확대 */
+  height: 100%;
+  object-fit: cover;
+}
+
+.homeBtn {
+  position: absolute;
+  left: 20px; /* 왼쪽 상단 여백 */
+  top: 20px;
+  width: 40px; /* 아이콘 크기는 디자인 보시고 조절하세요 */
+  height: 40px;
+  z-index: 10; /* 모든 요소보다 위에 오도록 설정 */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.homeBtn:hover {
+  transform: scale(1.1); /* 살짝 커지는 효과 */
+}
+
+.homeBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

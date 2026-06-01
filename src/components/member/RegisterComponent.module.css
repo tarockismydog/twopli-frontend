@@ -1,0 +1,109 @@
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #274592;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.polaroidCard {
+  position: relative;
+  width: 550px;
+  height: 800px;
+  background-color: #ffdfc8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Irish Grover", cursive;
+  font-size: 64px;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+.dot {
+  color: #274592;
+}
+
+.inputArea {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* 라벨과 입력창 한 줄 정렬 */
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.label {
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  width: 100px; /* 라벨 너비 고정 */
+  flex-shrink: 0;
+}
+
+.blackInput {
+  flex: 1;
+  height: 50px;
+  background-color: #000;
+  border: none;
+  padding: 0 15px;
+  color: #fff;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+
+.registerButton {
+  width: 100%;
+  height: 55px;
+  background-color: #626161;
+  color: #fff;
+  border: none;
+  font-family: "Irish Grover", cursive;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-bottom: 20px;
+}
+
+.registerButton:hover {
+  transform: scale(1.02);
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-family: "PretendardGOV-Regular", sans-serif;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #000;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.brandLogo {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: "Irish Grover", cursive;
+  font-size: 36px;
+  color: #000;
+}

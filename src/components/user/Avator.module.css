@@ -1,0 +1,10 @@
+.avatorContainer {
+  width: 180px; /* 에디터 이미지 크기에 맞춰 조절 */
+  z-index: 1;
+  margin-bottom: -0px; /* 턴테이블과 살짝 겹치게 */
+}
+
+.djImage {
+  width: 100%;
+  display: block;
+}
