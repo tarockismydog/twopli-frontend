@@ -1,73 +1,147 @@
-# React + TypeScript + Vite
+## 1. 서비스 개요
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**서비스명 (가칭)**
 
-Currently, two official plugins are available:
+👉 2pli / 하루 한 곡
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**서비스 설명**
 
-## React Compiler
+사용자가 하루에 한 곡의 음악을 선택하여 친구들과 공유하고,
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+서로의 취향을 음악을 통해 교류하는 소셜 서비스
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 2. 기획 배경 및 목적
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📌 배경
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 기존 음악 서비스는 “듣는 것”에 집중되어 있음
+- SNS는 많지만 **감정을 음악으로 표현하는 서비스는 부족**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🎯 목적
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 음악을 통해 감정을 공유하는 새로운 소셜 경험 제공
+- 친구 간 공감 및 유대감 형성
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 3. 주요 기능
+
+### 3.1 오늘의 노래 선택
+
+- 하루 1곡만 선택 가능
+- 음악 검색 및 선택 기능 제공
+- 선택 시 간단한 코멘트 입력 가능
+
+👉 예:
+
+- “오늘 기분이랑 딱 맞는 노래”
+- “퇴근하면서 들으면 좋은 곡”
+
+---
+
+### 3.2 친구의 노래 듣기
+
+---
+
+- 친구가 선택한 오늘의 노래 확인
+- 클릭 시 바로 재생
+
+👉 핵심 UX:
+
+- “상대의 취향을 음악으로 느끼기”
+
+---
+
+### 3.3 반응 기능
+
+- 좋아요 / 공감 버튼
+- 간단한 댓글 기능
+
+👉 예:
+
+- “이 노래 진짜 좋다”
+- “오늘 힘들었구나…”
+
+---
+
+### 3.4 하루 제한 시스템
+
+- 하루 1곡만 선택 가능
+- 다음날 리셋
+
+👉 선택의 의미 강화
+
+---
+
+## 4. 사용자 흐름 (User Flow)
+
+1. 로그인
+2. 오늘의 노래 선택
+3. 감정 및 코멘트 입력
+4. 친구 리스트 확인
+5. 친구의 노래 클릭 및 감상
+6. 반응 및 댓글 작성
+
+---
+
+## 5. UI/UX 컨셉
+
+### 📌 핵심 컨셉
+
+!image.png
+
+👉 **“오늘의 DJ가 되어 감정을 음악으로 표현하는 서비스”**
+
+- 사용자는 하루 한 번 “DJ”가 되어 음악을 선택
+- 선택한 음악은 친구들에게 공유됨
+- 친구들은 해당 음악을 들으며 사용자의 감정을 간접적으로 경험
+
+---
+
+### ✨ UX 컨셉 강화
+
+- 턴테이블 UI (클릭 → 음악 재생)
+- DJ 부스 느낌 인터페이스
+- 음악 선택 = “플레이 버튼 누르는 행위”
+
+---
+
+### ✨ 캐릭터 시스템
+
+- 기본 캐릭터 제공 (쥐, 곰, 고양이 등)
+- 내가 선택한 이미지의 상반신을 인식하여 선택 가능
+- 사용자가 “오늘의 DJ 캐릭터”로 표현됨
+- 감정에 따라 표정 변화
+
+### 📌 특징
+
+- lp판 클릭 (노래 선택)
+- 재생 버튼 클릭 (노래 재생)
+- 재생 버튼 클릭 시 말풍선 나타나고 그 안에 썸네일과 제목, 아티스트 정보
+- 직관적인 음악 플레이 UI
+- 감정 이모지 중심 인터페이스
+
+---
+
+## 6. 차별화 포인트
+
+- 하루 1곡 제한 → 선택의 의미 강화
+- 가벼운 SNS 구조 (부담 없음)
+- 취향 비교 기능
+
+---
+
+## 7. 기대 효과
+
+- 음악을 통한 공감 형성
+- 반복 사용 유도 (Daily 서비스)
+
+---
+
+## 8. 향후 확장 방향
+
+- 주간/월간 음악 리포트
+- AI 기반 음악 추천
+- 플레이리스트 자동 생성
