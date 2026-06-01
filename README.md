@@ -1,3 +1,7 @@
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/022a045e-39cc-4769-b254-b3c4c982ad72" />
+<img width="932" height="662" alt="image" src="https://github.com/user-attachments/assets/bfe7790b-52db-4c20-9c53-4bc7da4c50f6" />
+
+
 ## 1. 서비스 개요
 
 **서비스명 (가칭)**
@@ -89,8 +93,7 @@
 ## 5. UI/UX 컨셉
 
 ### 📌 핵심 컨셉
-
-!image.png
+<img width="931" height="661" alt="image" src="https://github.com/user-attachments/assets/022a045e-39cc-4769-b254-b3c4c982ad72" />
 
 👉 **“오늘의 DJ가 되어 감정을 음악으로 표현하는 서비스”**
 
@@ -118,7 +121,6 @@
 ### 📌 특징
 
 - lp판 클릭 (노래 선택)
-- 재생 버튼 클릭 (노래 재생)
 - 재생 버튼 클릭 시 말풍선 나타나고 그 안에 썸네일과 제목, 아티스트 정보
 - 직관적인 음악 플레이 UI
 - 감정 이모지 중심 인터페이스
@@ -143,5 +145,4 @@
 ## 8. 향후 확장 방향
 
 - 주간/월간 음악 리포트
-- AI 기반 음악 추천
-- 플레이리스트 자동 생성
+- 아바타/배경 이미지 변경
