@@ -2,7 +2,7 @@ import { useState } from "react";
 import YouTube from "react-youtube";
 import styles from "./NowPlayingPage.module.css";
 import { useNavigate } from "react-router-dom";
-import { useTrackStore } from "../store/useTrackStore";
+import { useTrackStore } from "../store/useMyTrackStore";
 
 interface YouTubeSearchResult {
   id: { videoId: string };

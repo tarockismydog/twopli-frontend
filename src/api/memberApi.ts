@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export const loginPost = async (id: string, pw: string) => {
-  const form = new FormData();
-  form.append("id", id);
-  form.append("password", pw);
-  const res = await axios.post(`/api/member/login`, form);
+  const res = await axios.post("/api/member/login", {
+    id,
+    password: pw,
+  });
 
-  if (res.data && res.data.accessToken) {
+  if (res.data?.accessToken) {
     localStorage.setItem("accessToken", res.data.accessToken);
     localStorage.setItem("nickname", res.data.nickname);
   }
@@ -19,12 +19,11 @@ export const registerPost = async (
   pw: string,
   nickname: string,
 ) => {
-  const form = new FormData();
-  form.append("id", id);
-  form.append("password", pw);
-  form.append("nickname", nickname);
-
-  const res = await axios.post(`/api/member/register`, form);
+  const res = await axios.post("/api/member/register", {
+    id,
+    password: pw,
+    nickname,
+  });
 
   return res.data;
 };
